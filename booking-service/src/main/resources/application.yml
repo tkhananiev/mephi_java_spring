@@ -1,0 +1,38 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: booking-service
+  datasource:
+    url: ${BOOKING_DB_URL:jdbc:h2:mem:bookingdb}
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka}
+    register-with-eureka: true
+    fetch-registry: true
+
+booking:
+  security:
+    jwt:
+      secret: ${BOOKING_JWT_SECRET:very-secret-signing-key-change-me}
+      expiration-minutes: 60
+
+hotel-service:
+  base-url: "http://hotel-service:8081"
+  request:
+    timeout-ms: 2000
+    max-retries: 3
+    retry-backoff-ms: 200

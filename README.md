@@ -38,7 +38,7 @@ docker compose up
   [http://localhost:8761](http://localhost:8761)  
   → Все сервисы должны иметь статус `UP`
 
-- **Здоровье Gateway:**  
+- **Actuator Gateway:**  
   [http://localhost:8080/actuator/health](http://localhost:8080/actuator/health)
 
 ---
@@ -97,7 +97,7 @@ curl -X GET http://localhost:8080/hotel-service/api/hotels
 
 ---
 
-## 🧾 Внесённые изменения
+## 🧾 Особенности проекта
 
 | Категория | Изменение | Причина |
 |------------|------------|----------|
